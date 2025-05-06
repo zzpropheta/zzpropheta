@@ -19,4 +19,4 @@ build:
       env:
         GITHUB_TOKEN: ${{ secrets.profile-summary-cards-token }}
       with:
-        USERNAME: ${{ github.repository_owner }}
+        USERNAME: ${{ github.zzpropheta }}
