@@ -12,11 +12,29 @@ jobs:
     name: generate-github-cards
     permissions:
       contents: write
-  
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      
+      - name: Generate GitHub Profile Summary Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
           GITHUB_TOKEN: ${{ secrets.SUMMARY }}
         with:
           USERNAME: ${{ github.repository_owner }}
+
+      - name: Verify Output Directory
+        run: |
+          if [ ! -d "./profile-summary-card-output" ]; then
+            echo "Error: Output directory does not exist."
+            exit 1
+          fi
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add ./profile-summary-card-output/
+          git commit -m "Update GitHub Summary Cards"
+          git push
