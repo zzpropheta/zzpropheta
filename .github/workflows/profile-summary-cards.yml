@@ -27,17 +27,3 @@ jobs:
   
         - name: Ensure Output Directory Exists
           run: mkdir -p ./profile-summary-card-output
-  
-        - name: Commit and Push Changes
-          run: |
-            if [ -d "./profile-summary-card-output" ] && [ "$(ls -A ./profile-summary-card-output)" ]; then
-              git config --global user.name "github-actions[bot]"
-              git config --global user.email "github-actions[bot]@users.noreply.github.com"
-              git add ./profile-summary-card-output/
-              if git commit -m "Update GitHub Summary Cards"; then
-                git push
-              else
-                echo "No changes to commit."
-              fi
-            else
-              echo "Output directory is empty or does not exist. Nothing to commit."
