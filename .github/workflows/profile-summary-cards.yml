@@ -34,8 +34,10 @@ jobs:
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
               git add ./profile-summary-card-output/
-              git commit -m "Update GitHub Summary Cards"
-              git push
+              if git commit -m "Update GitHub Summary Cards"; then
+                git push
+              else
+                echo "No changes to commit."
+              fi
             else
-              echo "No changes to commit."
-            fi
+              echo "Output directory is empty or does not exist. Nothing to commit."
