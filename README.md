@@ -3,6 +3,8 @@
 <p align="center">
   <a href="https://raw.githubusercontent.com/zzpropheta/zzpropheta/main/profile-summary-card-output/2077/3-stats.svg">
     <img src="https://raw.githubusercontent.com/zzpropheta/zzpropheta/main/profile-summary-card-output/2077/3-stats.svg" />
+  <a href="https://raw.githubusercontent.com/zzpropheta/zzpropheta/main/profile-summary-card-output/2077/2-most-commit-language.svg">
+    <img src="https://raw.githubusercontent.com/zzpropheta/zzpropheta/main/profile-summary-card-output/2077/2-most-commit-language.svg" />
   </a>
 </p>
 
